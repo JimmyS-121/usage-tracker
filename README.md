@@ -1,33 +1,16 @@
-# AI Usage Tracker (Python)
+# AI Usage Tracker Backend
 
-A Python FastAPI implementation for tracking staff usage of AI tools.
+This Flask app simulates fetching AI tool usage and survey feedback data, dynamically joins them, performs customizable analysis, and generates charts.
 
-## Setup
+## Features
 
-1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Create a `.env` file
-4. Run the server: `uvicorn main:app --reload`
+- Fetch and blend data from multiple sources.
+- Dynamic join on any key and join type.
+- Customizable analysis with usage counts and satisfaction scores.
+- Generate bar, pie, and line charts as base64 images.
+- API endpoints to get raw data, analysis, and charts.
 
-## API Documentation
+## Setup (Local without Docker)
 
-After starting the server, visit `http://localhost:8000/docs` for interactive Swagger documentation.
+1. Create a Python virtual environment and install dependencies:
 
-## Deployment
-
-### Option 1: Docker
-1. Build: `docker build -t ai-usage-tracker .`
-2. Run: `docker run -p 8000:8000 --env-file .env ai-usage-tracker`
-
-### Option 2: Render.com
-1. Create new Web Service
-2. Connect your GitHub repository
-3. Set environment variables
-4. Deploy
-
-### Option 3: Railway.app
-1. Create new project
-2. Import from GitHub
-3. Add PostgreSQL service
-4. Set environment variables
-5. Deploy
