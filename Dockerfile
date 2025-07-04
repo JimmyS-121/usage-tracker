@@ -1,7 +1,7 @@
 # Use official Python runtime as a parent image
 FROM python:3.11-slim
 
-# Set environment variables
+# Prevent Python from writing pyc files and buffer stdout/stderr
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
@@ -13,7 +13,7 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application code
+# Copy application code
 COPY . /app/
 
 # Expose port 5000 for Flask
