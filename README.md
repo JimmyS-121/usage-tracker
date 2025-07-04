@@ -1,16 +1,44 @@
-# AI Usage Tracker Backend
+# AI Tool Usage Tracker
 
-This Flask app simulates fetching AI tool usage and survey feedback data, dynamically joins them, performs customizable analysis, and generates charts.
+A Python-based tool to automatically track AI tool usage among staff, analyze usage data, and provide up-to-date recommendations—without requiring manual data uploads. The backend API collects usage data, performs analysis, and serves insights via a simple dashboard. The tool integrates with make.com for workflow automation and is designed for deployment on NorthFlank for scalable, sustainable hosting.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Integration with make.com](#integration-with-makecom)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+---
 
 ## Features
 
-- Fetch and blend data from multiple sources.
-- Dynamic join on any key and join type.
-- Customizable analysis with usage counts and satisfaction scores.
-- Generate bar, pie, and line charts as base64 images.
-- API endpoints to get raw data, analysis, and charts.
+- Automatic collection of AI tool usage data via API
+- Storage of raw usage data in a database
+- Periodic analysis with actionable recommendations
+- RESTful API built with FastAPI
+- Simple dashboard for visualization (optional frontend)
+- Workflow automation via make.com scenarios
+- Dockerized for easy deployment on NorthFlank
 
-## Setup (Local without Docker)
+---
 
-1. Create a Python virtual environment and install dependencies:
+## Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- Docker (for containerized deployment)
+- NorthFlank account (for hosting)
+- make.com account (for automation workflows)
+
+### Installation
+
+1. Clone the repository:
 
