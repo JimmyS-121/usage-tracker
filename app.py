@@ -5,17 +5,14 @@ app = Flask(__name__)
 
 @app.route("/api/data", methods=["GET"])
 def get_combined_data():
-    # Fetch data from multiple sources
     usage_df = fetch_usage_data()
     survey_df = fetch_survey_data()
 
-    # Dynamic join parameters from query string
     join_key = request.args.get("join_key", "user")
-    join_type = request.args.get("join_type", "inner")  # inner, left, right, outer
+    join_type = request.args.get("join_type", "inner")
 
     combined_df = dynamic_join(usage_df, survey_df, join_key=join_key, how=join_type)
 
-    # Return combined data as JSON
     return jsonify(combined_df.to_dict(orient="records"))
 
 @app.route("/api/analysis", methods=["GET"])
@@ -38,7 +35,7 @@ def get_chart():
 
     join_key = request.args.get("join_key", "user")
     join_type = request.args.get("join_type", "inner")
-    chart_type = request.args.get("chart_type", "bar")  # bar, pie, line
+    chart_type = request.args.get("chart_type", "bar")
 
     combined_df = dynamic_join(usage_df, survey_df, join_key=join_key, how=join_type)
 
